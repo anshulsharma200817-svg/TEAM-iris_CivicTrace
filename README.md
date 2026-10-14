@@ -4,22 +4,33 @@
 
 CivicTrace is a unified grievance lifecycle platform that gives every citizen complaint a unique identity, a recorded owner, an explainable deadline, and a verifiable outcome — across every channel through which it enters the system.
 
+### Three-document structure
+
+| Document | Purpose |
+|---|---|
+| **README.md** *(this file)* | Project overview, features, lifecycle, design principles |
+| [**ROUND1_INVESTIGATION.md**](./ROUND1_INVESTIGATION.md) | **Primary Round 1 submission evidence** — problem discovery, AI use justification, human decision ownership, epistemic separation, feasible MVP scope |
+| [**architecture.md**](./architecture.md) | Full technical architecture, AI workflow detail, data models, ADRs |
+
+> 📋 **Round 1 judges:** The investigation and methodology evidence is in [ROUND1_INVESTIGATION.md](./ROUND1_INVESTIGATION.md). Start there.
+
 ---
 
 ## Table of Contents
 
-1. [The Problem](#the-problem)
-2. [Problem Statement](#problem-statement)
-3. [Our Solution](#our-solution)
-4. [Key Features](#key-features)
-5. [Complaint Lifecycle](#complaint-lifecycle)
-6. [AI vs. Rules — Where We Draw the Line](#ai-vs-rules--where-we-draw-the-line)
-7. [Tech Stack](#tech-stack)
-8. [Project Structure](#project-structure)
-9. [Getting Started](#getting-started)
-10. [Design Principles](#design-principles)
-11. [Hackathon Scenarios Tested](#hackathon-scenarios-tested)
-12. [Team](#team)
+1. [Round 1 Submission](#round-1-submission)
+2. [The Problem](#the-problem)
+3. [Problem Statement](#problem-statement)
+4. [Our Solution](#our-solution)
+5. [Key Features](#key-features)
+6. [Complaint Lifecycle](#complaint-lifecycle)
+7. [AI vs. Rules — Where We Draw the Line](#ai-vs-rules--where-we-draw-the-line)
+8. [Tech Stack](#tech-stack)
+9. [Project Structure](#project-structure)
+10. [Getting Started](#getting-started)
+11. [Design Principles](#design-principles)
+12. [Hackathon Scenarios Tested](#hackathon-scenarios-tested)
+13. [Team](#team)
 
 ---
 
@@ -39,6 +50,20 @@ The same pothole, broken water pipe, or garbage pile may be reported via phone, 
 
 ### The Underlying Failure
 Both problems share one root cause: **there is no reliable, unified lifecycle for a complaint across all the channels through which it enters the system.** A complaint that changes departments loses its history. Duplicate reports create parallel work orders for the same physical problem. Citizens have no window into the process.
+
+---
+
+## Round 1 Submission
+
+The five Round 1 criteria are demonstrated explicitly in [**ROUND1_INVESTIGATION.md**](./ROUND1_INVESTIGATION.md):
+
+| Criterion | Section in investigation doc |
+|---|---|
+| Problem discovery before solution generation | §1 — Three candidate framings compared; one chosen with justification |
+| Purposeful AI use | §2 — Three AI roles defined; deliberate exclusions listed; AI use in investigation itself documented |
+| Human ownership of consequential decisions | §3 — Decision point map; five specific team decisions including AI rejections |
+| Epistemic separation | §4 — Facts / assumptions / inferences / unknowns / external evidence in separate labelled tables |
+| Feasible Build-Round scope | §5 — Four MVP capabilities; explicit deferral list; five pass/fail test scenarios; hourly build plan |
 
 ---
 
@@ -182,9 +207,13 @@ The case instructions require human review, auditability, and a route to correct
 
 ```
 TEAM-iris_CivicTrace/
+├── ROUND1_INVESTIGATION.md   # ★ Primary Round 1 submission evidence
+├── README.md                 # Project overview (this file)
+├── architecture.md           # Full technical architecture & AI workflow
+│
 ├── docs/
-│   ├── architecture.md       # Full system architecture & AI workflow
 │   └── decisions/            # Architecture decision records (ADRs)
+│
 ├── src/
 │   ├── intake/               # Channel adapters (web, SMS, WhatsApp, in-person)
 │   ├── core/                 # Case lifecycle engine, ID generation, audit log
@@ -193,11 +222,11 @@ TEAM-iris_CivicTrace/
 │   ├── notifications/        # SMS, email, WhatsApp outbound
 │   ├── api/                  # REST API routes
 │   └── dashboard/            # Officer & supervisor UI
+│
 ├── tests/
-│   ├── scenarios/            # End-to-end lifecycle scenarios
+│   ├── scenarios/            # End-to-end lifecycle scenarios (maps to §5.4)
 │   └── unit/
-├── architecture.md           # ← You are here (project root copy)
-├── README.md                 # ← You are here
+│
 └── package.json / pyproject.toml
 ```
 

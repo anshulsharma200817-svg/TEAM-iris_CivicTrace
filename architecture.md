@@ -2,7 +2,17 @@
 
 > **AI Synergy Hackathon 2026 · Round 1 · Team IRIS**
 
-This document describes the complete technical architecture and AI workflow of CivicTrace: a unified, traceable municipal grievance lifecycle platform.
+This document describes the complete technical architecture and AI workflow of CivicTrace.
+
+### Document context
+
+| Document | Purpose |
+|---|---|
+| [README.md](./README.md) | Project overview and features |
+| [ROUND1_INVESTIGATION.md](./ROUND1_INVESTIGATION.md) | **Round 1 submission evidence** — problem discovery, AI justification, human decisions, epistemic separation, MVP scope |
+| **architecture.md** *(this file)* | Technical architecture, AI workflow, data models, ADRs |
+
+> The *why* behind every design decision in this document is in [ROUND1_INVESTIGATION.md §3 (human decisions)](./ROUND1_INVESTIGATION.md) and [§2 (AI use justification)](./ROUND1_INVESTIGATION.md). Read that document first if you are evaluating Round 1 criteria.
 
 ---
 
